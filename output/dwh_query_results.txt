@@ -1,0 +1,168 @@
+==========================================================
+HASIL EKSEKUSI QUERY ANALITIK DATA WAREHOUSE
+==========================================================
+
+=== 1. Progress Kelengkapan Data per Tipe Kelas ===
+SELECT 
+            tipe_kelas,
+            status_nilai,
+            COUNT(*) AS jumlah_record,
+            ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (PARTITION BY tipe_kelas), 2) AS persentase
+        FROM Fact_Nilai
+        GROUP BY tipe_kelas, status_nilai
+        ORDER BY tipe_kelas, jumlah_record DESC;
+
+--- Hasil Output ---
+tipe_kelas       status_nilai  jumlah_record  persentase
+ praktikum            lengkap            315       61.05
+ praktikum    belum_dikoreksi            201       38.95
+     teori            lengkap            167       74.55
+     teori belum_dilaksanakan             56       25.00
+     teori    belum_dikoreksi              1        0.45
+
+================================================================================
+
+=== 2. Perbandingan Performa Kelas Teori vs Praktikum ===
+SELECT 
+            tipe_kelas,
+            COUNT(nilai_angka) AS jumlah_nilai_terisi,
+            ROUND(AVG(nilai_angka), 2) AS rata_rata_nilai,
+            MIN(nilai_angka) AS nilai_terendah,
+            MAX(nilai_angka) AS nilai_tertinggi
+        FROM Fact_Nilai
+        WHERE status_nilai = 'lengkap'
+        GROUP BY tipe_kelas;
+
+--- Hasil Output ---
+tipe_kelas  jumlah_nilai_terisi  rata_rata_nilai  nilai_terendah  nilai_tertinggi
+ praktikum                  281            92.66              51              100
+     teori                  167            57.25              11              100
+
+================================================================================
+
+=== 3. Rata-rata Nilai per Mata Kuliah & Tipe Kelas ===
+SELECT 
+            m.nama_matkul,
+            f.tipe_kelas,
+            COUNT(f.nilai_angka) AS jumlah_nilai_masuk,
+            ROUND(AVG(f.nilai_angka), 2) AS rata_rata_nilai
+        FROM Fact_Nilai f
+        JOIN Dim_MataKuliah m ON f.matkul_id = m.matkul_id
+        WHERE f.status_nilai = 'lengkap'
+        GROUP BY m.nama_matkul, f.tipe_kelas
+        ORDER BY rata_rata_nilai DESC;
+
+--- Hasil Output ---
+         nama_matkul tipe_kelas  jumlah_nilai_masuk  rata_rata_nilai
+Metode Statistika II  praktikum                  80            96.19
+ Metode Statistika I  praktikum                 174            92.38
+ Metode Sains Data I  praktikum                  27            84.07
+Metode Statistika II      teori                 167            57.25
+
+================================================================================
+
+=== 4. Distribusi Nilai per Komponen per Mata Kuliah (Sampel) ===
+SELECT 
+            m.nama_matkul,
+            k.nama_komponen,
+            COUNT(f.nilai_angka) AS jumlah_mahasiswa,
+            ROUND(AVG(f.nilai_angka), 2) AS rata_rata_nilai,
+            MIN(f.nilai_angka) AS nilai_minimal,
+            MAX(f.nilai_angka) AS nilai_maksimal
+        FROM Fact_Nilai f
+        JOIN Dim_MataKuliah m ON f.matkul_id = m.matkul_id
+        JOIN Dim_KomponenNilai k ON f.komponen_id = k.komponen_id
+        WHERE f.status_nilai = 'lengkap'
+        GROUP BY m.nama_matkul, k.nama_komponen
+        ORDER BY m.nama_matkul, k.nama_komponen
+        LIMIT 12;
+
+--- Hasil Output ---
+         nama_matkul nama_komponen  jumlah_mahasiswa  rata_rata_nilai  nilai_minimal  nilai_maksimal
+ Metode Sains Data I           UAP                27            84.07          70.00              90
+ Metode Statistika I      Presensi                29           100.00         100.00             100
+ Metode Statistika I         Sikap                29            92.55          90.00              97
+ Metode Statistika I       Tugas 1                29            90.53          55.50             100
+ Metode Statistika I       Tugas 2                29            92.86          51.00             100
+ Metode Statistika I           UAP                29            92.26          70.00             100
+ Metode Statistika I           UTP                29            86.04          63.75              98
+Metode Statistika II        Kuis 1                56            29.70          11.00              83
+Metode Statistika II        Kuis 2                55            70.78          18.00             100
+Metode Statistika II      Presensi                28            97.32          62.50             100
+Metode Statistika II         Sikap                28           100.00         100.00             100
+Metode Statistika II       Tugas 1                12            95.67          87.00              98
+
+================================================================================
+
+=== 5. Identifikasi Mahasiswa dengan Nilai Rendah (< 60) di Beberapa Komponen ===
+SELECT 
+            m.nim,
+            m.nama,
+            mk.nama_matkul,
+            COUNT(f.nilai_id) AS jumlah_komponen_merah,
+            group_concat(k.nama_komponen, ', ') AS komponen_nilai_rendah
+        FROM Fact_Nilai f
+        JOIN Dim_Mahasiswa m ON f.mahasiswa_id = m.mahasiswa_id
+        JOIN Dim_MataKuliah mk ON f.matkul_id = mk.matkul_id
+        JOIN Dim_KomponenNilai k ON f.komponen_id = k.komponen_id
+        WHERE f.nilai_angka < 60.00 AND f.status_nilai = 'lengkap'
+        GROUP BY m.nim, m.nama, mk.nama_matkul
+        HAVING COUNT(f.nilai_id) >= 2
+        ORDER BY jumlah_komponen_merah DESC
+        LIMIT 10;
+
+--- Hasil Output ---
+            nim                          nama          nama_matkul  jumlah_komponen_merah komponen_nilai_rendah
+255091101111003              TAQIYUDDIN ELHAQ Metode Statistika II                      3   Kuis 1, Kuis 2, UTS
+255091107111004            FAIQ ADMAJA WIBOWO Metode Statistika II                      3   Kuis 1, Kuis 2, UTS
+255091107111007            AZKA NAURAH HAMASY Metode Statistika II                      3   Kuis 1, Kuis 2, UTS
+255091107111014                  RAHMANIWAFDA Metode Statistika II                      3   Kuis 1, Kuis 2, UTS
+255091107111016  NOVA NABILAH PUTRI NURKUSUMA Metode Statistika II                      3   Kuis 1, Kuis 2, UTS
+255091107111018            AHMAD FAIZ BAIHAQY Metode Statistika II                      3   Kuis 1, Kuis 2, UTS
+255091100111006 ENCEK NAYLA AGIESTYA DEVARANI Metode Statistika II                      2        Kuis 1, Kuis 2
+255091100111008                 ARYA ABIMANYU Metode Statistika II                      2           Kuis 1, UTS
+255091100111013         MUHAMMAD RAFIE HAIKAL Metode Statistika II                      2        Kuis 1, Kuis 2
+255091100111017  IDA BAGUS ARDITYA GIRIDHARMA  Metode Statistika I                      2      Tugas 1, Tugas 2
+
+================================================================================
+
+=== 6. Peringkat Nilai Akhir Praktikum Mahasiswa (Top 10) ===
+SELECT 
+            m.nim,
+            m.nama,
+            mk.nama_matkul,
+            ROUND(SUM(f.nilai_angka * (k.bobot_persen / 100.0)), 2) AS nilai_akhir_estimasi,
+            CASE 
+                WHEN SUM(f.nilai_angka * (k.bobot_persen / 100.0)) > 80 THEN 'A'
+                WHEN SUM(f.nilai_angka * (k.bobot_persen / 100.0)) > 75 THEN 'B+'
+                WHEN SUM(f.nilai_angka * (k.bobot_persen / 100.0)) > 69 THEN 'B'
+                WHEN SUM(f.nilai_angka * (k.bobot_persen / 100.0)) > 60 THEN 'C+'
+                WHEN SUM(f.nilai_angka * (k.bobot_persen / 100.0)) > 55 THEN 'C'
+                WHEN SUM(f.nilai_angka * (k.bobot_persen / 100.0)) > 50 THEN 'D+'
+                WHEN SUM(f.nilai_angka * (k.bobot_persen / 100.0)) > 44 THEN 'D'
+                ELSE 'E'
+            END AS predikat_estimasi
+        FROM Fact_Nilai f
+        JOIN Dim_Mahasiswa m ON f.mahasiswa_id = m.mahasiswa_id
+        JOIN Dim_MataKuliah mk ON f.matkul_id = mk.matkul_id
+        JOIN Dim_KomponenNilai k ON f.komponen_id = k.komponen_id
+        WHERE f.tipe_kelas = 'praktikum' AND f.nilai_angka IS NOT NULL
+        GROUP BY m.nim, m.nama, mk.nama_matkul
+        ORDER BY nilai_akhir_estimasi DESC
+        LIMIT 10;
+
+--- Hasil Output ---
+            nim                       nama         nama_matkul  nilai_akhir_estimasi predikat_estimasi
+255091101111009     AINI TUSAMMA SALSABILA Metode Statistika I                 98.65                 A
+255091100111012                MELVIN TEJA Metode Statistika I                 97.40                 A
+255091100111005   NATHANIEL LEKSMANA PUTRA Metode Statistika I                 97.20                 A
+255091100111010        SALSABILATUS ZAHROH Metode Statistika I                 97.05                 A
+255091100111002 MUHAMMAD FAIRO YANS AZFARO Metode Statistika I                 96.75                 A
+255091100111007            HASRIP WIDIANTO Metode Statistika I                 96.55                 A
+255091100111001       ALISTIA ESTININGTYAS Metode Statistika I                 96.50                 A
+255091101111002      EONIKE GLORIA SANTOSO Metode Statistika I                 96.10                 A
+255091100111009    MUHAMMAD SYAHID ALFATIH Metode Statistika I                 95.90                 A
+255091101111008  MICHAEL RANDY CHRISTIAWAN Metode Statistika I                 95.80                 A
+
+================================================================================
+

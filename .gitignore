@@ -1,0 +1,39 @@
+# ── Database asli (berisi data real) ────────────────────────────────
+data/dwh_nilai.db
+
+# ── File Excel asli (data mentah, tidak dipublikasikan) ──────────────
+data/raw/
+
+# ── Python ──────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# ── Jupyter ──────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── IDE ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── OS ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Laporan (dokumen Word/PDF — ukuran besar) ────────────────────────
+output/reports/*.docx
+output/reports/*.pdf
+
+# ── Temporary / cache ────────────────────────────────────────────────
+*.log
+*.tmp

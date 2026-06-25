@@ -1,0 +1,2001 @@
+{
+  "kpi": {
+    "total_mhs": 57,
+    "total_records": 740,
+    "total_lengkap": 482,
+    "avg_overall": 79.46,
+    "avg_prak": 92.66,
+    "avg_teori": 57.25,
+    "total_matkul": 3
+  },
+  "progress": [
+    {
+      "tipe_kelas": "praktikum",
+      "status_nilai": "belum_dikoreksi",
+      "jumlah": 201
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "status_nilai": "lengkap",
+      "jumlah": 315
+    },
+    {
+      "tipe_kelas": "teori",
+      "status_nilai": "belum_dikoreksi",
+      "jumlah": 1
+    },
+    {
+      "tipe_kelas": "teori",
+      "status_nilai": "belum_dilaksanakan",
+      "jumlah": 56
+    },
+    {
+      "tipe_kelas": "teori",
+      "status_nilai": "lengkap",
+      "jumlah": 167
+    }
+  ],
+  "distribusi_tipe": [
+    {
+      "tipe_kelas": "praktikum",
+      "avg": 92.66,
+      "mn": 51.0,
+      "mx": 100.0,
+      "n": 281
+    },
+    {
+      "tipe_kelas": "teori",
+      "avg": 57.25,
+      "mn": 11.0,
+      "mx": 100.0,
+      "n": 167
+    }
+  ],
+  "rata_per_matkul": [
+    {
+      "nama_matkul": "Metode Statistika I",
+      "tipe_kelas": "praktikum",
+      "rata_rata": 92.38
+    },
+    {
+      "nama_matkul": "Metode Statistika II",
+      "tipe_kelas": "praktikum",
+      "rata_rata": 96.19
+    },
+    {
+      "nama_matkul": "Metode Statistika II",
+      "tipe_kelas": "teori",
+      "rata_rata": 57.25
+    },
+    {
+      "nama_matkul": "Metode Sains Data I",
+      "tipe_kelas": "praktikum",
+      "rata_rata": 84.07
+    }
+  ],
+  "komponen_praktikum": [
+    {
+      "nama_matkul": "Metode Sains Data I",
+      "nama_komponen": "UAP",
+      "bobot_persen": 30,
+      "rata_rata": 84.07,
+      "n": 27
+    },
+    {
+      "nama_matkul": "Metode Statistika I",
+      "nama_komponen": "UAP",
+      "bobot_persen": 30,
+      "rata_rata": 92.26,
+      "n": 29
+    },
+    {
+      "nama_matkul": "Metode Statistika I",
+      "nama_komponen": "UTP",
+      "bobot_persen": 20,
+      "rata_rata": 86.04,
+      "n": 29
+    },
+    {
+      "nama_matkul": "Metode Statistika I",
+      "nama_komponen": "Presensi",
+      "bobot_persen": 15,
+      "rata_rata": 100.0,
+      "n": 29
+    },
+    {
+      "nama_matkul": "Metode Statistika I",
+      "nama_komponen": "Tugas 2",
+      "bobot_persen": 15,
+      "rata_rata": 92.86,
+      "n": 29
+    },
+    {
+      "nama_matkul": "Metode Statistika I",
+      "nama_komponen": "Tugas 1",
+      "bobot_persen": 15,
+      "rata_rata": 90.53,
+      "n": 29
+    },
+    {
+      "nama_matkul": "Metode Statistika I",
+      "nama_komponen": "Sikap",
+      "bobot_persen": 5,
+      "rata_rata": 92.55,
+      "n": 29
+    },
+    {
+      "nama_matkul": "Metode Statistika II",
+      "nama_komponen": "UTP",
+      "bobot_persen": 20,
+      "rata_rata": 85.17,
+      "n": 12
+    },
+    {
+      "nama_matkul": "Metode Statistika II",
+      "nama_komponen": "Presensi",
+      "bobot_persen": 15,
+      "rata_rata": 97.32,
+      "n": 28
+    },
+    {
+      "nama_matkul": "Metode Statistika II",
+      "nama_komponen": "Tugas 1",
+      "bobot_persen": 15,
+      "rata_rata": 95.67,
+      "n": 12
+    },
+    {
+      "nama_matkul": "Metode Statistika II",
+      "nama_komponen": "Sikap",
+      "bobot_persen": 5,
+      "rata_rata": 100.0,
+      "n": 28
+    }
+  ],
+  "top10": [
+    {
+      "nama": "Mahasiswa 30",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 98.65
+    },
+    {
+      "nama": "Mahasiswa 13",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 97.4
+    },
+    {
+      "nama": "Mahasiswa 06",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 97.2
+    },
+    {
+      "nama": "Mahasiswa 11",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 97.05
+    },
+    {
+      "nama": "Mahasiswa 03",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 96.75
+    },
+    {
+      "nama": "Mahasiswa 08",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 96.55
+    },
+    {
+      "nama": "Mahasiswa 02",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 96.5
+    },
+    {
+      "nama": "Mahasiswa 23",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 96.1
+    },
+    {
+      "nama": "Mahasiswa 10",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 95.9
+    },
+    {
+      "nama": "Mahasiswa 29",
+      "nama_matkul": "Metode Statistika I",
+      "nilai_akhir": 95.8
+    }
+  ],
+  "semua_nilai": [
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 82
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 88
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 89
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 84
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 81
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 81
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 89
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 82
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 81
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 83
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 88
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 85
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 81
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 85
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 85
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 84
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 82
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 81
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 89
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 87
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 86
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 81
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 85
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 70
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 81
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 99
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 96.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 97
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 84
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 84
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 87.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 93
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 82.25
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 97
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 97
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 75
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 72
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 80
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90.75
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 96
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 99.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 93
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 81.75
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 88.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 96
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 96
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 86.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 89
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 58
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 97
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 96
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 99
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 82
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 77.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 87
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 93
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 78.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 93
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 97
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 88.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 55.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 55
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 84
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 58
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 83.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 88.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 84
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 86
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 80
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 89
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 80.25
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 77.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 86
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 84.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 87.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 96
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 97
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 51
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 85
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 89
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 86.25
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 87.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 89.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 81.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 97
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 63.75
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 70
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 73.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 93.25
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 93
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 82
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 97
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 87.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 78
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 96
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 75
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 62.5
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 96
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 57
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 96
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 67
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 87
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 55
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "praktikum",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 40
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 30
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 47
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 25
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 25
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 40
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 35
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 12
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 40
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 27
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 48
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 20
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 17
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 24
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 38
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 15
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 34
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 20
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 30
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 20
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 43
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 60
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 15
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 33
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 25
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 20
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 11
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 35
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 40
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 83
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 14
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 30
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 37
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 20
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 14
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 25
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 11
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 28
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 15
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 22
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 30
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 18
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 58
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 31
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 30
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 13
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 40
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 30
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 30
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 11
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 25
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 33
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 33
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 35
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 28
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 50
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 80
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 47.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 97
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 75
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 80
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 85
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 37
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 73
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 85
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 65
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 64.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 47
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 74
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 47
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 74.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 93
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 46.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 70
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 54.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 85
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 80
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 60
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 76
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 66.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 32
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 23
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 81
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 18
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 44
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 85
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 62.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 69
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 47
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 39.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 48
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 88
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 42.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 68.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 44
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 95
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 72
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 41
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 94
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 83
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 72
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 65
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 93
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 88
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 61
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 80
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 46
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 100
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 86
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 75.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 69
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 82
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 75
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 92
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 67.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 91.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 75.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 79
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 64.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 90
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 51
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 78
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 77
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 70
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 82
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 87
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 88
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 70
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 80
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 98
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 83
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 37
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 78
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 52
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 18
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 63
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 58
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 41
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 70.5
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 80
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 27
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 70
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 51
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 68
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 37
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 39
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 91
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 41
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 71
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 72
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 93
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 87
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 65
+    },
+    {
+      "tipe_kelas": "teori",
+      "nilai_angka": 98
+    }
+  ]
+}

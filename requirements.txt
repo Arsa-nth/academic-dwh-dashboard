@@ -1,0 +1,21 @@
+# Python dependencies for DWH Nilai Akademik project
+# Install: pip install -r requirements.txt
+
+# Data processing & ETL
+pandas>=2.0
+numpy>=1.24
+openpyxl>=3.1          # Baca file Excel (.xlsx)
+sqlalchemy>=2.0         # ETL pipeline (MySQL)
+
+# Visualization
+matplotlib>=3.7
+seaborn>=0.12
+Pillow>=10.0            # Image processing
+
+# Notebook
+jupyter>=1.0
+ipykernel>=6.0
+
+# Report generation (optional — untuk build_final_report.py)
+python-docx>=1.1
+requests>=2.31

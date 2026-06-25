@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DWH Dashboard — Nilai Akademik Mahasiswa | Nathanael K.B.P.</title>
+  <meta name="description" content="Dashboard analitik Data Warehouse nilai akademik mahasiswa Program Studi Sains Data, Universitas Brawijaya, T.A. 2025/2026. Implementasi Star Schema dengan ETL pipeline Python." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════ HERO ════════════════════════════════ -->
+<header class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="badge" id="badge-hero">📊 Data Warehouse Project</div>
+    <h1>Analitik Nilai Akademik<br /><span class="gradient-text">Mahasiswa Sains Data</span></h1>
+    <p class="hero-sub">
+      Implementasi <strong>Data Warehouse</strong> berbasis arsitektur Kimball (Star Schema) untuk
+      pemantauan performa nilai akademik mahasiswa secara holistik.<br />
+      <span class="mono">ETL Pipeline</span> · <span class="mono">SQLite</span> ·
+      <span class="mono">Python</span> · <span class="mono">Matplotlib / Seaborn</span>
+    </p>
+    <div class="hero-meta">
+      <span class="meta-chip">👤 Nathanael Komang Bagus Prakarsa</span>
+      <span class="meta-chip">🎓 Sains Data — Universitas Brawijaya</span>
+      <span class="meta-chip">📅 T.A. 2025/2026</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#dashboard" class="btn btn-primary" id="btn-view-dashboard">Lihat Dashboard</a>
+      <a href="https://github.com/Arsa-nth" target="_blank" rel="noopener" class="btn btn-ghost" id="btn-github">
+        GitHub ↗
+      </a>
+    </div>
+    <p class="privacy-note">
+      🔒 <strong>Data Privasi:</strong> Nama &amp; NIM mahasiswa telah dianonimkan untuk melindungi privasi.
+    </p>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ KPI CARDS ════════════════════════════ -->
+<section class="section" id="kpi-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Key Performance Indicators</h2>
+      <p>Ringkasan statistik dari data warehouse nilai akademik</p>
+    </div>
+    <div class="kpi-grid" id="kpi-grid">
+      <!-- Diisi oleh JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ DASHBOARD ════════════════════════════ -->
+<section class="section" id="dashboard">
+  <div class="container">
+    <div class="section-header">
+      <h2>Dashboard Analitik</h2>
+      <p>5 visualisasi interaktif dari data nilai akademik (57 mahasiswa, 3 mata kuliah)</p>
+    </div>
+
+    <!-- Row 1: Chart 1 + Chart 2 -->
+    <div class="charts-row two-col">
+      <div class="chart-card" id="card-chart1">
+        <div class="chart-card-header">
+          <span class="chart-icon">📊</span>
+          <div>
+            <h3>Progress Kelengkapan Data</h3>
+            <p>Persentase status nilai per tipe kelas</p>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart1" aria-label="Stacked bar chart kelengkapan data"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card" id="card-chart2">
+        <div class="chart-card-header">
+          <span class="chart-icon">🎻</span>
+          <div>
+            <h3>Distribusi Nilai: Teori vs Praktikum</h3>
+            <p>Statistik deskriptif per tipe kelas</p>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart2" aria-label="Bar chart distribusi nilai teori vs praktikum"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Chart 3 full -->
+    <div class="charts-row one-col">
+      <div class="chart-card" id="card-chart3">
+        <div class="chart-card-header">
+          <span class="chart-icon">📚</span>
+          <div>
+            <h3>Rata-rata Nilai per Mata Kuliah</h3>
+            <p>Perbandingan nilai teori & praktikum lintas 3 mata kuliah</p>
+          </div>
+        </div>
+        <div class="chart-wrap chart-wide">
+          <canvas id="chart3" aria-label="Grouped bar chart nilai per matkul"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Chart 4 + Chart 5 -->
+    <div class="charts-row two-col">
+      <div class="chart-card" id="card-chart4">
+        <div class="chart-card-header">
+          <span class="chart-icon">📦</span>
+          <div>
+            <h3>Rata-rata per Komponen Praktikum</h3>
+            <p>Distribusi nilai per komponen & mata kuliah</p>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart4" aria-label="Grouped bar chart komponen praktikum"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card" id="card-chart5">
+        <div class="chart-card-header">
+          <span class="chart-icon">🏆</span>
+          <div>
+            <h3>Top 10 Nilai Akhir Praktikum</h3>
+            <p>Nilai akhir estimasi tertimbang (data anonim)</p>
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart5" aria-label="Horizontal bar chart top 10"></canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ARSITEKTUR ════════════════════════════ -->
+<section class="section section-dark" id="architecture">
+  <div class="container">
+    <div class="section-header">
+      <h2>Arsitektur Data Warehouse</h2>
+      <p>Pendekatan Kimball (Bottom-Up) dengan skema logis Star Schema</p>
+    </div>
+
+    <div class="arch-grid">
+      <div class="arch-card" id="arch-star">
+        <div class="arch-card-title">⭐ Star Schema</div>
+        <div class="star-schema-diagram">
+          <div class="dim-box dim-top" id="dim-mahasiswa">
+            <strong>Dim_Mahasiswa</strong>
+            <span>mahasiswa_id · nim · nama · kelas · angkatan</span>
+          </div>
+          <div class="schema-row">
+            <div class="dim-box dim-left" id="dim-matkul">
+              <strong>Dim_MataKuliah</strong>
+              <span>matkul_id · kode · nama · sks</span>
+            </div>
+            <div class="fact-box" id="fact-nilai">
+              <strong>Fact_Nilai</strong>
+              <span class="fact-fields">nilai_id<br/>mahasiswa_id ▸<br/>matkul_id ▸<br/>komponen_id ▸<br/>periode_id ▸<br/>nilai_angka<br/>tipe_kelas<br/>status_nilai</span>
+            </div>
+            <div class="dim-box dim-right" id="dim-komponen">
+              <strong>Dim_KomponenNilai</strong>
+              <span>komponen_id · nama · bobot · tipe</span>
+            </div>
+          </div>
+          <div class="dim-box dim-bottom" id="dim-periode">
+            <strong>Dim_Periode</strong>
+            <span>periode_id · tahun_akademik · semester</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-stack-col">
+        <div class="tech-card" id="tech-etl">
+          <div class="tech-icon">⚙️</div>
+          <div>
+            <h4>ETL Pipeline</h4>
+            <p>Python · Pandas · SQLAlchemy<br/>Extract (Excel) → Transform → Load (SQLite)</p>
+          </div>
+        </div>
+        <div class="tech-card" id="tech-viz">
+          <div class="tech-icon">📈</div>
+          <div>
+            <h4>Visualisasi</h4>
+            <p>Matplotlib · Seaborn · Chart.js<br/>Dark mode premium dashboard</p>
+          </div>
+        </div>
+        <div class="tech-card" id="tech-db">
+          <div class="tech-icon">🗄️</div>
+          <div>
+            <h4>Database</h4>
+            <p>SQLite (demo) · MySQL (produksi)<br/>Star Schema — 4 dim + 1 fakta</p>
+          </div>
+        </div>
+        <div class="tech-card" id="tech-privacy">
+          <div class="tech-icon">🔒</div>
+          <div>
+            <h4>Privasi Data</h4>
+            <p>Nama &amp; NIM dianonimkan<br/>Data mentah tidak dipublikasikan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ TENTANG ════════════════════════════ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text" id="about-text">
+        <h2>Tentang Project</h2>
+        <p>
+          Project ini mengimplementasikan <strong>Data Warehouse</strong> untuk mengkonsolidasikan
+          data nilai akademik mahasiswa yang sebelumnya tersebar di berbagai file spreadsheet Excel
+          menjadi satu <em>Single Source of Truth</em>.
+        </p>
+        <p>
+          Pipeline ETL dibangun dengan Python, mengekstraksi data dari 4 file Excel (3 presensi praktikum
+          + 1 nilai teori), mentransformasikan dengan pembersihan data (null handling, #DIV/0! removal),
+          dan memuatnya ke dalam Star Schema di database relasional.
+        </p>
+        <ul class="feature-list">
+          <li>🗃️ <strong>57 mahasiswa</strong>, <strong>740 fact records</strong></li>
+          <li>📖 <strong>3 mata kuliah</strong>: Metode Statistika I &amp; II, Metode Sains Data I</li>
+          <li>📋 <strong>10 komponen penilaian</strong> (6 praktikum + 4 teori)</li>
+          <li>🔐 Privasi dijaga — semua nama &amp; NIM dianonimkan di output publik</li>
+        </ul>
+        <a href="https://github.com/Arsa-nth" target="_blank" rel="noopener"
+           class="btn btn-primary" id="btn-github-2" style="margin-top:1.5rem;">
+          Lihat Source Code di GitHub ↗
+        </a>
+      </div>
+      <div class="about-stats" id="about-stats">
+        <div class="stat-card" id="stat-1">
+          <div class="stat-num">57</div>
+          <div class="stat-lbl">Mahasiswa</div>
+        </div>
+        <div class="stat-card" id="stat-2">
+          <div class="stat-num">740</div>
+          <div class="stat-lbl">Fact Records</div>
+        </div>
+        <div class="stat-card" id="stat-3">
+          <div class="stat-num">3</div>
+          <div class="stat-lbl">Mata Kuliah</div>
+        </div>
+        <div class="stat-card" id="stat-4">
+          <div class="stat-num">92.66</div>
+          <div class="stat-lbl">Avg. Praktikum</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ════════════════════════════ -->
+<footer class="footer" id="footer">
+  <div class="container footer-content">
+    <div>
+      <p><strong>Nathanael Komang Bagus Prakarsa</strong></p>
+      <p class="mono">NIM: 245091107111005 · Sains Data · Universitas Brawijaya · 2026</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Arsa-nth" target="_blank" rel="noopener" id="link-github-footer">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
