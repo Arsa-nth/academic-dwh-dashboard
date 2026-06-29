@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -18,45 +18,73 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════ HERO ════════════════════════════════ -->
-<header class="hero" id="hero">
-  <div class="hero-bg">
-    <div class="hero-orb orb-1"></div>
-    <div class="hero-orb orb-2"></div>
-    <div class="hero-orb orb-3"></div>
+<!-- ═══════════════════════ TOP NAV ═══════════════════════════════ -->
+<nav class="topnav" id="topnav">
+  <div class="topnav-inner">
+    <div class="topnav-brand">
+      <div class="brand-dot"></div>
+      DWH Dashboard
+    </div>
+    <div class="topnav-links">
+      <a href="#kpi-section">KPI</a>
+      <a href="#dashboard">Visualisasi</a>
+      <a href="#architecture">Arsitektur</a>
+      <a href="#about">Tentang</a>
+    </div>
   </div>
-  <div class="container hero-content">
-    <div class="badge" id="badge-hero">📊 Data Warehouse Project</div>
-    <h1>Analitik Nilai Akademik<br /><span class="gradient-text">Mahasiswa Sains Data</span></h1>
+</nav>
+
+<!-- ═══════════════════════ HERO ══════════════════════════════════ -->
+<header class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow" id="badge-hero">
+      <span class="hero-eyebrow-dot"></span>
+      Data Warehouse Project — T.A. 2025/2026
+    </div>
+    <h1>Analitik Nilai Akademik<br /><em>Mahasiswa Sains Data</em></h1>
     <p class="hero-sub">
       Implementasi <strong>Data Warehouse</strong> berbasis arsitektur Kimball (Star Schema) untuk
-      pemantauan performa nilai akademik mahasiswa secara holistik.<br />
-      <span class="mono">ETL Pipeline</span> · <span class="mono">SQLite</span> ·
-      <span class="mono">Python</span> · <span class="mono">Matplotlib / Seaborn</span>
+      pemantauan performa nilai akademik mahasiswa Program Studi Sains Data,
+      Universitas Brawijaya secara holistik.
     </p>
-    <div class="hero-meta">
-      <span class="meta-chip">👤 Nathanael Komang Bagus Prakarsa</span>
-      <span class="meta-chip">🎓 Sains Data — Universitas Brawijaya</span>
-      <span class="meta-chip">📅 T.A. 2025/2026</span>
+    <div class="hero-tags">
+      <span class="hero-tag">ETL Pipeline</span>
+      <span class="hero-tag">SQLite</span>
+      <span class="hero-tag">Python · Pandas</span>
+      <span class="hero-tag">Star Schema</span>
+      <span class="hero-tag">Chart.js</span>
     </div>
     <div class="hero-actions">
       <a href="#dashboard" class="btn btn-primary" id="btn-view-dashboard">Lihat Dashboard</a>
-      <a href="https://github.com/Arsa-nth" target="_blank" rel="noopener" class="btn btn-ghost" id="btn-github">
+      <a href="https://github.com/Arsa-nth" target="_blank" rel="noopener" class="btn btn-outline" id="btn-github">
         GitHub ↗
       </a>
     </div>
-    <p class="privacy-note">
-      🔒 <strong>Data Privasi:</strong> Nama &amp; NIM mahasiswa telah dianonimkan untuk melindungi privasi.
+    <p class="hero-privacy">
+      <strong>Privasi Data:</strong> Nama &amp; NIM mahasiswa telah dianonimkan untuk melindungi privasi.
     </p>
   </div>
 </header>
 
-<!-- ═══════════════════════════ KPI CARDS ════════════════════════════ -->
+<!-- ═══════════════════════ PROFILE BAR ═══════════════════════════ -->
+<div style="background:#fff; border-bottom:1px solid #e4e8ef; padding:0.85rem 2rem;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:2rem; flex-wrap:wrap;">
+    <span style="font-size:0.82rem; color:#6b7a99;">
+      <strong style="color:#1a2133;">Nathanael Komang Bagus Prakarsa</strong>
+    </span>
+    <span style="font-size:0.82rem; color:#6b7a99; font-family:'JetBrains Mono',monospace;">
+      NIM: 245091107111005
+    </span>
+    <span style="font-size:0.82rem; color:#6b7a99;">Sains Data · Universitas Brawijaya</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════ KPI CARDS ════════════════════════════ -->
 <section class="section" id="kpi-section">
   <div class="container">
     <div class="section-header">
-      <h2>Key Performance Indicators</h2>
-      <p>Ringkasan statistik dari data warehouse nilai akademik</p>
+      <h2>Ringkasan Statistik</h2>
+      <p>Indikator kinerja utama dari data warehouse nilai akademik mahasiswa</p>
     </div>
     <div class="kpi-grid" id="kpi-grid">
       <!-- Diisi oleh JS -->
@@ -64,19 +92,19 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════ DASHBOARD ════════════════════════════ -->
-<section class="section" id="dashboard">
+<!-- ═══════════════════════ DASHBOARD ════════════════════════════ -->
+<section class="section section-alt" id="dashboard">
   <div class="container">
     <div class="section-header">
-      <h2>Dashboard Analitik</h2>
-      <p>5 visualisasi interaktif dari data nilai akademik (57 mahasiswa, 3 mata kuliah)</p>
+      <h2>Dashboard Visualisasi</h2>
+      <p>5 visualisasi interaktif dari data nilai akademik — 57 mahasiswa, 3 mata kuliah, 740 fact records</p>
     </div>
 
     <!-- Row 1: Chart 1 + Chart 2 -->
     <div class="charts-row two-col">
       <div class="chart-card" id="card-chart1">
         <div class="chart-card-header">
-          <span class="chart-icon">📊</span>
+          <div class="chart-icon-wrap">📊</div>
           <div>
             <h3>Progress Kelengkapan Data</h3>
             <p>Persentase status nilai per tipe kelas</p>
@@ -89,7 +117,7 @@
 
       <div class="chart-card" id="card-chart2">
         <div class="chart-card-header">
-          <span class="chart-icon">🎻</span>
+          <div class="chart-icon-wrap">📋</div>
           <div>
             <h3>Distribusi Nilai: Teori vs Praktikum</h3>
             <p>Statistik deskriptif per tipe kelas</p>
@@ -105,10 +133,10 @@
     <div class="charts-row one-col">
       <div class="chart-card" id="card-chart3">
         <div class="chart-card-header">
-          <span class="chart-icon">📚</span>
+          <div class="chart-icon-wrap">📚</div>
           <div>
             <h3>Rata-rata Nilai per Mata Kuliah</h3>
-            <p>Perbandingan nilai teori & praktikum lintas 3 mata kuliah</p>
+            <p>Perbandingan nilai teori &amp; praktikum lintas 3 mata kuliah</p>
           </div>
         </div>
         <div class="chart-wrap chart-wide">
@@ -121,10 +149,10 @@
     <div class="charts-row two-col">
       <div class="chart-card" id="card-chart4">
         <div class="chart-card-header">
-          <span class="chart-icon">📦</span>
+          <div class="chart-icon-wrap">📦</div>
           <div>
             <h3>Rata-rata per Komponen Praktikum</h3>
-            <p>Distribusi nilai per komponen & mata kuliah</p>
+            <p>Distribusi nilai per komponen &amp; mata kuliah</p>
           </div>
         </div>
         <div class="chart-wrap">
@@ -134,7 +162,7 @@
 
       <div class="chart-card" id="card-chart5">
         <div class="chart-card-header">
-          <span class="chart-icon">🏆</span>
+          <div class="chart-icon-wrap">🏅</div>
           <div>
             <h3>Top 10 Nilai Akhir Praktikum</h3>
             <p>Nilai akhir estimasi tertimbang (data anonim)</p>
@@ -149,8 +177,8 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════ ARSITEKTUR ════════════════════════════ -->
-<section class="section section-dark" id="architecture">
+<!-- ═══════════════════════ ARSITEKTUR ═══════════════════════════ -->
+<section class="section" id="architecture">
   <div class="container">
     <div class="section-header">
       <h2>Arsitektur Data Warehouse</h2>
@@ -159,7 +187,7 @@
 
     <div class="arch-grid">
       <div class="arch-card" id="arch-star">
-        <div class="arch-card-title">⭐ Star Schema</div>
+        <div class="arch-card-title">Star Schema — Diagram Logis</div>
         <div class="star-schema-diagram">
           <div class="dim-box dim-top" id="dim-mahasiswa">
             <strong>Dim_Mahasiswa</strong>
@@ -170,10 +198,12 @@
               <strong>Dim_MataKuliah</strong>
               <span>matkul_id · kode · nama · sks</span>
             </div>
+            <span class="schema-arrow">⟷</span>
             <div class="fact-box" id="fact-nilai">
               <strong>Fact_Nilai</strong>
               <span class="fact-fields">nilai_id<br/>mahasiswa_id ▸<br/>matkul_id ▸<br/>komponen_id ▸<br/>periode_id ▸<br/>nilai_angka<br/>tipe_kelas<br/>status_nilai</span>
             </div>
+            <span class="schema-arrow">⟷</span>
             <div class="dim-box dim-right" id="dim-komponen">
               <strong>Dim_KomponenNilai</strong>
               <span>komponen_id · nama · bobot · tipe</span>
@@ -188,28 +218,28 @@
 
       <div class="tech-stack-col">
         <div class="tech-card" id="tech-etl">
-          <div class="tech-icon">⚙️</div>
+          <div class="tech-icon-wrap">⚙️</div>
           <div>
             <h4>ETL Pipeline</h4>
             <p>Python · Pandas · SQLAlchemy<br/>Extract (Excel) → Transform → Load (SQLite)</p>
           </div>
         </div>
         <div class="tech-card" id="tech-viz">
-          <div class="tech-icon">📈</div>
+          <div class="tech-icon-wrap">📈</div>
           <div>
             <h4>Visualisasi</h4>
-            <p>Matplotlib · Seaborn · Chart.js<br/>Dark mode premium dashboard</p>
+            <p>Matplotlib · Seaborn · Chart.js<br/>Dashboard interaktif berbasis web</p>
           </div>
         </div>
         <div class="tech-card" id="tech-db">
-          <div class="tech-icon">🗄️</div>
+          <div class="tech-icon-wrap">🗄️</div>
           <div>
             <h4>Database</h4>
-            <p>SQLite (demo) · MySQL (produksi)<br/>Star Schema — 4 dim + 1 fakta</p>
+            <p>SQLite (demo) · MySQL (produksi)<br/>Star Schema — 4 dimensi + 1 fakta</p>
           </div>
         </div>
         <div class="tech-card" id="tech-privacy">
-          <div class="tech-icon">🔒</div>
+          <div class="tech-icon-wrap">🔒</div>
           <div>
             <h4>Privasi Data</h4>
             <p>Nama &amp; NIM dianonimkan<br/>Data mentah tidak dipublikasikan</p>
@@ -220,8 +250,8 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════ TENTANG ════════════════════════════ -->
-<section class="section" id="about">
+<!-- ═══════════════════════ TENTANG ══════════════════════════════ -->
+<section class="section section-alt" id="about">
   <div class="container">
     <div class="about-grid">
       <div class="about-text" id="about-text">
@@ -237,13 +267,13 @@
           dan memuatnya ke dalam Star Schema di database relasional.
         </p>
         <ul class="feature-list">
-          <li>🗃️ <strong>57 mahasiswa</strong>, <strong>740 fact records</strong></li>
-          <li>📖 <strong>3 mata kuliah</strong>: Metode Statistika I &amp; II, Metode Sains Data I</li>
-          <li>📋 <strong>10 komponen penilaian</strong> (6 praktikum + 4 teori)</li>
-          <li>🔐 Privasi dijaga — semua nama &amp; NIM dianonimkan di output publik</li>
+          <li><strong>57 mahasiswa</strong>, <strong>740 fact records</strong></li>
+          <li><strong>3 mata kuliah</strong>: Metode Statistika I &amp; II, Metode Sains Data I</li>
+          <li><strong>10 komponen penilaian</strong> (6 praktikum + 4 teori)</li>
+          <li>Privasi dijaga — semua nama &amp; NIM dianonimkan di output publik</li>
         </ul>
         <a href="https://github.com/Arsa-nth" target="_blank" rel="noopener"
-           class="btn btn-primary" id="btn-github-2" style="margin-top:1.5rem;">
+           class="btn btn-ghost" id="btn-github-2">
           Lihat Source Code di GitHub ↗
         </a>
       </div>
@@ -269,7 +299,7 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════ FOOTER ════════════════════════════ -->
+<!-- ═══════════════════════ FOOTER ════════════════════════════════ -->
 <footer class="footer" id="footer">
   <div class="container footer-content">
     <div>

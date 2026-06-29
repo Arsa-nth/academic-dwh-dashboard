@@ -3,27 +3,37 @@
    Nathanael Komang Bagus Prakarsa | 2026
    ════════════════════════════════════════════════════════════════════ */
 
-// ── Color Palette (matches CSS variables) ────────────────────────
+// ── Color Palette (matches clean white theme) ────────────────────
 const C = {
-  bg:     '#0f0f18',
-  card:   '#1a1a2e',
-  panel:  '#22222e',
-  text:   '#e8e8f5',
-  muted:  '#8888aa',
-  blue:   '#4f8ef7',
-  purple: '#9b72f5',
-  green:  '#22d3a3',
-  yellow: '#fbbf24',
-  red:    '#f87171',
-  cyan:   '#38bdf8',
-  orange: '#fb923c',
-  grid:   'rgba(255,255,255,0.06)',
+  text:    '#1a2133',
+  muted:   '#6b7a99',
+  dim:     '#a0aabe',
+  border:  '#e4e8ef',
+  // Primary palette
+  blue:    '#2563eb',
+  indigo:  '#4f46e5',
+  green:   '#059669',
+  amber:   '#d97706',
+  red:     '#dc2626',
+  teal:    '#0891b2',
+  purple:  '#7c3aed',
+  // Lighter tints for fills
+  blueA:   'rgba(37,99,235,0.18)',
+  indigoA: 'rgba(79,70,229,0.18)',
+  greenA:  'rgba(5,150,105,0.18)',
+  amberA:  'rgba(217,119,6,0.18)',
+  redA:    'rgba(220,38,38,0.18)',
+  tealA:   'rgba(8,145,178,0.18)',
+  purpleA: 'rgba(124,58,237,0.18)',
+  // Grid line
+  grid:    'rgba(0,0,0,0.06)',
 };
 
 // ── Chart.js global defaults ─────────────────────────────────────
 Chart.defaults.color          = C.muted;
 Chart.defaults.borderColor    = C.grid;
-Chart.defaults.font.family    = "'Inter', system-ui, sans-serif";
+Chart.defaults.font.family    = "'Plus Jakarta Sans', 'Inter', system-ui, sans-serif";
+Chart.defaults.font.size      = 12;
 Chart.defaults.plugins.legend.labels.boxRadius = 4;
 Chart.defaults.plugins.legend.labels.padding   = 14;
 Chart.defaults.plugins.legend.labels.color     = C.muted;
@@ -31,6 +41,17 @@ Chart.defaults.plugins.legend.labels.color     = C.muted;
 const gridOpts = {
   color: C.grid,
   drawBorder: false,
+};
+
+const tooltipDefaults = {
+  backgroundColor: '#fff',
+  titleColor: C.text,
+  bodyColor: C.muted,
+  borderColor: C.border,
+  borderWidth: 1,
+  padding: 10,
+  cornerRadius: 8,
+  boxPadding: 4,
 };
 
 // ── Data fetch ───────────────────────────────────────────────────
@@ -47,12 +68,12 @@ async function loadData() {
 
 // ── KPI Cards ────────────────────────────────────────────────────
 const KPI_CONFIG = [
-  { key: 'total_mhs',      label: 'Total Mahasiswa',   icon: '👥', accent: C.blue,   fmt: v => v },
-  { key: 'total_records',  label: 'Total Records',     icon: '📋', accent: C.purple, fmt: v => v },
-  { key: 'total_lengkap',  label: 'Nilai Lengkap',     icon: '✅', accent: C.green,  fmt: v => v },
-  { key: 'avg_prak',       label: 'Avg. Praktikum',    icon: '📈', accent: C.yellow, fmt: v => parseFloat(v).toFixed(2) },
-  { key: 'avg_teori',      label: 'Avg. Teori',        icon: '📉', accent: C.cyan,   fmt: v => parseFloat(v).toFixed(2) },
-  { key: 'avg_overall',    label: 'Avg. Overall',      icon: '⭐', accent: C.orange, fmt: v => parseFloat(v).toFixed(2) },
+  { key: 'total_mhs',     label: 'Total Mahasiswa', icon: '👥', accent: C.blue,   accentLight: 'rgba(37,99,235,0.1)',   fmt: v => v },
+  { key: 'total_records', label: 'Total Records',   icon: '📋', accent: C.indigo, accentLight: 'rgba(79,70,229,0.1)',   fmt: v => v },
+  { key: 'total_lengkap', label: 'Nilai Lengkap',   icon: '✅', accent: C.green,  accentLight: 'rgba(5,150,105,0.1)',   fmt: v => v },
+  { key: 'avg_prak',      label: 'Avg. Praktikum',  icon: '📈', accent: C.amber,  accentLight: 'rgba(217,119,6,0.1)',   fmt: v => parseFloat(v).toFixed(2) },
+  { key: 'avg_teori',     label: 'Avg. Teori',      icon: '📉', accent: C.teal,   accentLight: 'rgba(8,145,178,0.1)',   fmt: v => parseFloat(v).toFixed(2) },
+  { key: 'avg_overall',   label: 'Avg. Overall',    icon: '⭐', accent: C.purple, accentLight: 'rgba(124,58,237,0.1)',  fmt: v => parseFloat(v).toFixed(2) },
 ];
 
 function renderKPI(kpi) {
@@ -64,10 +85,10 @@ function renderKPI(kpi) {
     card.className = 'kpi-card animate-in';
     card.id = `kpi-card-${i}`;
     card.style.setProperty('--accent', cfg.accent);
-    card.style.animationDelay = `${i * 80}ms`;
+    card.style.animationDelay = `${i * 70}ms`;
     card.innerHTML = `
-      <div class="kpi-icon">${cfg.icon}</div>
-      <div class="kpi-value" style="color:${cfg.accent}">${cfg.fmt(val)}</div>
+      <div class="kpi-icon-wrap" style="background:${cfg.accentLight};">${cfg.icon}</div>
+      <div class="kpi-value">${cfg.fmt(val)}</div>
       <div class="kpi-label">${cfg.label}</div>
     `;
     grid.appendChild(card);
@@ -80,14 +101,12 @@ function buildChart1(data) {
   const tipes = [...new Set(raw.map(r => r.tipe_kelas))];
   const statuses = ['lengkap', 'belum_dikoreksi', 'belum_dilaksanakan'];
   const labels_clean = { lengkap: 'Lengkap', belum_dikoreksi: 'Belum Dikoreksi', belum_dilaksanakan: 'Belum Dilaksanakan' };
-  const colors = [C.green, C.yellow, C.red];
+  const colors = [C.green, C.amber, C.red];
 
-  // pivot
   const pivot = {};
   tipes.forEach(t => { pivot[t] = {}; statuses.forEach(s => pivot[t][s] = 0); });
   raw.forEach(r => { pivot[r.tipe_kelas][r.status_nilai] = r.jumlah; });
 
-  // to percentage
   const datasets = statuses.map((s, si) => ({
     label: labels_clean[s],
     data: tipes.map(t => {
@@ -95,7 +114,7 @@ function buildChart1(data) {
       return total ? Math.round(pivot[t][s] / total * 1000) / 10 : 0;
     }),
     backgroundColor: colors[si],
-    borderRadius: si === 0 ? 0 : 0,
+    borderRadius: 4,
     borderSkipped: false,
   }));
 
@@ -111,9 +130,9 @@ function buildChart1(data) {
       maintainAspectRatio: false,
       plugins: {
         tooltip: {
+          ...tooltipDefaults,
           callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}%` },
         },
-        datalabels: false,
       },
       scales: {
         x: {
@@ -125,7 +144,7 @@ function buildChart1(data) {
         y: {
           stacked: true,
           grid: { display: false },
-          ticks: { color: C.text, font: { weight: 700 } },
+          ticks: { color: C.text, font: { weight: '600' } },
         },
       },
     },
@@ -136,6 +155,8 @@ function buildChart1(data) {
 function buildChart2(data) {
   const dist = data.distribusi_tipe;
   const labels = dist.map(r => r.tipe_kelas.charAt(0).toUpperCase() + r.tipe_kelas.slice(1));
+  const palette = [C.blue, C.indigo];
+  const paletteA = [C.blueA, C.indigoA];
 
   new Chart(document.getElementById('chart2'), {
     type: 'bar',
@@ -145,28 +166,22 @@ function buildChart2(data) {
         {
           label: 'Rata-rata',
           data: dist.map(r => r.avg),
-          backgroundColor: [C.blue, C.purple],
-          borderRadius: 8,
+          backgroundColor: palette,
+          borderRadius: 6,
           borderSkipped: false,
         },
         {
           label: 'Nilai Max',
           data: dist.map(r => r.mx),
-          backgroundColor: [
-            'rgba(79,142,247,0.3)',
-            'rgba(155,114,245,0.3)',
-          ],
-          borderRadius: 8,
+          backgroundColor: paletteA,
+          borderRadius: 6,
           borderSkipped: false,
         },
         {
           label: 'Nilai Min',
           data: dist.map(r => r.mn),
-          backgroundColor: [
-            'rgba(79,142,247,0.12)',
-            'rgba(155,114,245,0.12)',
-          ],
-          borderRadius: 8,
+          backgroundColor: ['rgba(37,99,235,0.07)', 'rgba(79,70,229,0.07)'],
+          borderRadius: 6,
           borderSkipped: false,
         },
       ],
@@ -176,9 +191,9 @@ function buildChart2(data) {
       maintainAspectRatio: false,
       plugins: {
         tooltip: {
+          ...tooltipDefaults,
           callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}` },
         },
-        annotation: {},
       },
       scales: {
         y: {
@@ -187,7 +202,7 @@ function buildChart2(data) {
           grid: gridOpts,
           ticks: { color: C.muted },
         },
-        x: { grid: { display: false }, ticks: { color: C.text, font: { weight: 700 } } },
+        x: { grid: { display: false }, ticks: { color: C.text, font: { weight: '600' } } },
       },
     },
   });
@@ -198,13 +213,9 @@ function buildChart3(data) {
   const raw = data.rata_per_matkul;
   const matkuls = [...new Set(raw.map(r => r.nama_matkul))];
   const tipes   = ['praktikum', 'teori'];
-  const tipeColors = { praktikum: C.blue, teori: C.purple };
+  const tipeColors = { praktikum: C.blue, teori: C.indigo };
 
-  // shorten names
-  const shortName = s => s
-    .replace('Metode ', 'M. ')
-    .replace('Statistika', 'Statistika')
-    .replace('Sains Data', 'Sains Data');
+  const shortName = s => s.replace('Metode ', 'M. ');
 
   const pivot = {};
   matkuls.forEach(m => { pivot[m] = {}; });
@@ -214,7 +225,7 @@ function buildChart3(data) {
     label: t.charAt(0).toUpperCase() + t.slice(1),
     data: matkuls.map(m => pivot[m][t] ?? 0),
     backgroundColor: tipeColors[t],
-    borderRadius: 8,
+    borderRadius: 6,
     borderSkipped: false,
   }));
 
@@ -229,9 +240,9 @@ function buildChart3(data) {
       maintainAspectRatio: false,
       plugins: {
         tooltip: {
+          ...tooltipDefaults,
           callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}` },
         },
-        annotation: {},
       },
       scales: {
         y: {
@@ -244,7 +255,7 @@ function buildChart3(data) {
           grid: { display: false },
           ticks: {
             color: C.text,
-            font: { weight: 600, size: 11 },
+            font: { weight: '600', size: 11 },
             maxRotation: 10,
           },
         },
@@ -258,7 +269,7 @@ function buildChart4(data) {
   const raw = data.komponen_praktikum;
   const komps  = ['Tugas 1','Tugas 2','Presensi','Sikap','UTP','UAP'];
   const matkuls = [...new Set(raw.map(r => r.nama_matkul))];
-  const matkul_colors = [C.blue, C.purple, C.green];
+  const matkul_colors = [C.blue, C.indigo, C.teal];
 
   const pivot = {};
   komps.forEach(k => { pivot[k] = {}; });
@@ -271,8 +282,8 @@ function buildChart4(data) {
   const datasets = matkuls.map((m, i) => ({
     label: m,
     data: komps.map(k => pivot[k][m] ?? 0),
-    backgroundColor: matkul_colors[i] || C.orange,
-    borderRadius: 6,
+    backgroundColor: matkul_colors[i] || C.amber,
+    borderRadius: 5,
     borderSkipped: false,
   }));
 
@@ -284,33 +295,32 @@ function buildChart4(data) {
       maintainAspectRatio: false,
       plugins: {
         tooltip: {
+          ...tooltipDefaults,
           callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw}` },
         },
       },
       scales: {
         y: { min: 60, max: 105, grid: gridOpts, ticks: { color: C.muted } },
-        x: { grid: { display: false }, ticks: { color: C.text, font: { weight: 600 } } },
+        x: { grid: { display: false }, ticks: { color: C.text, font: { weight: '600' } } },
       },
     },
   });
 }
 
-// ── Chart 5: Top 10 (Horizontal Bar) ────────────────────────────
+// ── Chart 5: Top 10 (Horizontal Bar) ─────────────────────────────
 function buildChart5(data) {
-  const top10 = [...data.top10].reverse();  // ascending for barh
+  const top10 = [...data.top10].reverse();
   const labels = top10.map(r => {
     const initials = r.nama_matkul.split(' ').map(w => w[0]).join('');
     return `${r.nama} (${initials})`;
   });
   const values = top10.map(r => r.nilai_akhir);
 
-  // Plasma-like gradient colors
+  // Blue gradient from light to deep
   const gradColors = values.map((v, i) => {
-    const t = i / (values.length - 1);
-    const r = Math.round(100 + t * 155);
-    const g = Math.round(50 + t * 30);
-    const b = Math.round(200 - t * 100);
-    return `rgba(${r},${g},${b},0.85)`;
+    const t = i / Math.max(values.length - 1, 1);
+    const opacity = 0.55 + t * 0.45;
+    return `rgba(37,99,235,${opacity.toFixed(2)})`;
   });
 
   new Chart(document.getElementById('chart5'), {
@@ -321,7 +331,7 @@ function buildChart5(data) {
         label: 'Nilai Akhir Estimasi',
         data: values,
         backgroundColor: gradColors,
-        borderRadius: 6,
+        borderRadius: 5,
         borderSkipped: false,
       }],
     },
@@ -332,6 +342,7 @@ function buildChart5(data) {
       plugins: {
         legend: { display: false },
         tooltip: {
+          ...tooltipDefaults,
           callbacks: { label: ctx => ` Nilai: ${ctx.raw}` },
         },
       },
@@ -361,9 +372,9 @@ function initScrollAnimations() {
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.1 }
   );
-  document.querySelectorAll('.animate-in, .chart-card, .kpi-card, .tech-card, .stat-card, .arch-card').forEach(el => {
+  document.querySelectorAll('.chart-card, .kpi-card, .tech-card, .stat-card, .arch-card').forEach(el => {
     el.classList.add('animate-in');
     observer.observe(el);
   });
@@ -382,7 +393,7 @@ function initScrollAnimations() {
   initScrollAnimations();
 })();
 
-// ── Fallback embedded data (jika file JSON tidak tersedia) ───────
+// ── Fallback embedded data (jika file JSON tidak tersedia) ────────
 const FALLBACK_DATA = {
   kpi: {
     total_mhs: 57,
